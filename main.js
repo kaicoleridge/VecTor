@@ -8,6 +8,7 @@ const client = new Client({
   });
 
 
+  //FIND ALL FILES IN THE COMMANDS FOLDER 
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -19,6 +20,7 @@ for(const file of commandFiles){
 
 //DECLARE PREFIX FOR BOT
 let prefix = ">";
+
  //CHECK IF THE BOT IS ONLINE AND SETTING BOT STATUS PRESENCE
 client.once('ready', () => {
     console.log(`Vector is alive and logged in as ${client.user.tag}`);
