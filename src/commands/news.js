@@ -1,10 +1,8 @@
 const {MessageEmbed} = require('discord.js');
+const config = require(`${process.cwd()}/config.json`)
 const axios = require('axios');
-const config = require('../../config.json');
 
 const newsAPIURL = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${config.API_KEY}`;
-
-
 
 module.exports = {
     name: 'news',

@@ -1,6 +1,8 @@
-const { Client, Intents, Collection, MessageEmbed, MessageAttachment} = require("discord.js");
-const config = require("./config.json")
+const { Client, Intents, Collection, MessageEmbed,} = require("discord.js");
+const config = require(`${process.cwd()}/config.json`)
 const fs = require("fs");
+
+
 
 //DECLARING AND INITIALIZING INTENTS
 const client = new Client({ 
@@ -22,14 +24,6 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-//FIND FILES IN THE TOOLS FOLDER
-client.toolCommands = new Collection();
-const toolFiles = fs.readdirSync('./src/tools').filter(file => file.endsWith('.js'));
-
-for(const file of toolFiles){
-    const tool = require(`./src/tools/${file}`);
-    client.toolCommands.set(tool.name, tool);
-}
 
 
 //DECLARE PREFIX FOR BOT
