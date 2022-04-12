@@ -1,4 +1,4 @@
-const { MessageEmbed, MessageAttachment } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: "help",
     description: "Shows all commands",
@@ -12,11 +12,12 @@ module.exports = {
            {name: ">ping 🏓", value: "Test the bot's latency, to see if I'm working correcly!"},
            {name: ">invite 🔗", value: "Get the invite link for the NUM Discord Server"},
            {name: ">meme 🐸", value: "Get a random meme"},
+           {name: ">cat 🐈", value: "Get a random cat image"},
            {name: ">stats 📈", value: "Show Discord server stats ie. member count etc."},
            {name: ">report 🔴" ,value: "Report a user to the NUM Discord Server"},
            {name: ">twitter 🐦",   value:"Keep up to date with me on twitter!"},
-           {name: ">movieShowings 🍿", value: "Get the current movie showings for the NUM Cinema"},
-           {name: "💜-- MORE COMMANDS COMING SOON!--💜", value: "LOOK OUT FOR MORE UPCOMING COMMANDS!"}
+           {name: ">movieShowings 🍿", value: "Get the current movie showings hosted in Bigscreen VR & Discord Server"},
+           {name: "💜 MORE COMMANDS COMING SOON! 💜", value: "LOOK OUT FOR MORE UPCOMING COMMANDS!"}
            
         )
         message.channel.send({ embeds: [helpEmbed], files: ['./imgs/help.png'] });

@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "axios": "^0.26.1",
+    "discord-anti-spam": "^2.7.3",
     "discord.js": "^13.6.0",
     "fs": "^0.0.1-security",
-    "node-fetch": "^3.2.3"
+    "node-fetch": "^2.6.7"
   }
 }
