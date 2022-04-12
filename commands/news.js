@@ -1,11 +1,16 @@
 const {MessageEmbed} = require('discord.js');
 const axios = require('axios');
+const config = require('../config.json');
+
+const newsAPIURL = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${config.API_KEY}`;
+
+
 
 module.exports = {
     name: 'news',
     description: 'Sends a news headlines',
     execute(message, args) {
-        axios.get('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=bea0297df4cc4214ac3afd1198a9e616')
+        axios.get(newsAPIURL)
         .then(response => {
             const newsEmbed = new MessageEmbed()
             .setTitle('Top World News Headlines 📰')
