@@ -13,7 +13,7 @@ module.exports = {
            {name: ">invite 🔗", value: "Get the invite link to invite me to your server!"},
            {name: ">meme 🐸", value: "Get a random meme"},
            {name: ">dog 🐈", value: "Get a random dog image"},
-           {name: ">news 📰", value: "Get the latest news from the BBC"},
+           {name: ">news 📰", value: "Get the latest news headlines from around the world"},
            {name: ">stats 📈", value: "Show Discord server stats ie. member count etc."},
            {name: ">report 🔴" ,value: "Report a user to the NUM Discord Server"},
            {name: ">twitter 🐦",   value:"Keep up to date with me on twitter!"},

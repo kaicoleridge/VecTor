@@ -14,7 +14,9 @@ module.exports = {
               {name: "One more thing", value:'P.S. You can also DM if you are having any issues with VecTor', inline: true}
         )
         .setThumbnail('')
-        .setFooter('Powered by Twitter')
+        twitterEmbed.setFooter({
+            text: 'Powered by Twitter',
+        })
         message.channel.send({embeds: [twitterEmbed], files: ['./imgs/twitterBanner.png']});
     }
 }

@@ -1,6 +1,6 @@
 const {MessageEmbed} = require('discord.js');
 const axios = require('axios');
-const config = require('../config.json');
+const config = require('../../config.json');
 
 const newsAPIURL = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${config.API_KEY}`;
 
@@ -10,6 +10,7 @@ module.exports = {
     name: 'news',
     description: 'Sends a news headlines',
     execute(message, args) {
+        message.channel.send("📰 Getting Top News Headlines...");
         axios.get(newsAPIURL)
         .then(response => {
             const newsEmbed = new MessageEmbed()
@@ -17,9 +18,12 @@ module.exports = {
             .setDescription('Here are the latest news headlines from around the World')
             .setColor('#4c31e8')
             .setFooter('Powered by NewsAPI.org')
-            .setThumbnail('https://www.citypng.com/public/uploads/small/116397410121f8ms8nyga8gh6kho8holbm60rutcwgyn6zcu4kk9gepuzgtpwdwjrufmckihn8xtvmvrcitpy50orl3t5jrijnzofkccucxjjrz.png')
+            .setThumbnail('attachment://news.png')
             .setImage(response.data.articles[4].urlToImage)
-            .setFooter("Powered by NewsAPI.org. Information provided by BBC News")
+            newsEmbed.setFooter({
+                text: "Powered by NewsAPI.org. Information provided by BBC News"
+            })
+            .setTimestamp()
             .addFields(
                   {name: "1️⃣ Headline", value: response.data.articles[0].title, inline: false},
                   {name: "Description", value: response.data.articles[0].description, inline: false},
@@ -52,7 +56,7 @@ module.exports = {
 
                   
             )
-            message.channel.send({embeds: [newsEmbed]});
+            message.channel.send({embeds: [newsEmbed], files: ['./imgs/news.png']});
         })
 
         

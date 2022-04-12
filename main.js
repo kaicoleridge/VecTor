@@ -1,4 +1,4 @@
-const { Client, Intents, Collection} = require("discord.js");
+const { Client, Intents, Collection, MessageEmbed, MessageAttachment} = require("discord.js");
 const config = require("./config.json")
 const fs = require("fs");
 
@@ -17,10 +17,10 @@ const client = new Client({
 
 //FIND ALL FILES IN THE COMMANDS FOLDER 
 client.commands = new Collection();
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js'));
 
 for(const file of commandFiles){
-    const command = require(`./commands/${file}`);
+    const command = require(`./src/commands/${file}`);
     client.commands.set(command.name, command);
 }
 
@@ -32,6 +32,24 @@ let prefix = ">";
 client.once('ready', () => {
     console.log(`Vector is alive and logged in as ${client.user.tag}`);
     client.user.setActivity('>help', { type: "LISTENING"},)
+});
+
+//SEND PRIVATE DM TO USER ON JOIN
+client.on('guildMemberAdd', member => {
+    const welcomeEmbed = new MessageEmbed()
+    .setTitle('👋 Welcome to the NUM Discord Server!')
+    .setDescription("Hello there. Thank you for joining the NUM Discord Server! Glad you're here :)")
+    .addFields(
+        {name: "📜 Rules", value: "Please read the rules before you start using the server! Rules can be found in the #rules channel!"},
+        {name: "\u200b", value: "\u200b", inline: false},
+        {name: "✔️ Verify", value: "In order to use the server please verify yourself by heading over to the #verify channel."},
+    )
+    .setColor('#4c31e8')
+    .setImage('attachment://welcome.png')
+    .setTimestamp()
+    .setAuthor("By NUM")
+    member.send("Welcome to the server!");
+    member.send({ embeds: [welcomeEmbed], files: ['./imgs/welcome.png'] });
 });
 
 

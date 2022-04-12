@@ -13,7 +13,9 @@ module.exports = {
             .setDescription('**DISHED UP THIS MEME FOR YOU**' )
             .setImage(response.data.url)
             .setColor('#4c31e8')
-            .setFooter('Powered by meme-api.herokuapp.com')
+            memeEmbed.setFooter({
+                text: "Powered by meme-api.herokuapp.com"
+            })
           
             message.channel.send({embeds: [memeEmbed]}).then(embedMessage => {
                 embedMessage.react('👍');
