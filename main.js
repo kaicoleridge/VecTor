@@ -1,14 +1,21 @@
-const { Client, Intents, Collection, MessageEmbed} = require("discord.js");
+const { Client, Intents, Collection, MessageEmbed, DiscordAPIError} = require("discord.js");
 const config = require("./config.json")
 const fs = require("fs");
 
 
-const client = new Client({
-    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
-  });
+
+const client = new Client({ 
+    intents: [
+        Intents.FLAGS.GUILDS,
+        Intents.FLAGS.GUILD_MESSAGES,
+        Intents.FLAGS.GUILD_MEMBERS,
+       
+    ] 
+})
 
 
-  //FIND ALL FILES IN THE COMMANDS FOLDER 
+
+//FIND ALL FILES IN THE COMMANDS FOLDER 
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -29,14 +36,18 @@ client.once('ready', () => {
 
 
 
-client.on("message", message => {
+
+
+
+//checks if command exists // error checking for commands
+client.on("messageCreate", message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
 
     if(!client.commands.has(commandName)) 
-    return message.reply(`${message.member.user.tag} 🤦 That command doesn't exist! Try again. https://i.gifer.com/9nCX.gif`);
+    return message.reply(`${message.member.user.tag} 🤦 DOH! That command doesn't exist! https://i.gifer.com/9nCX.gif`);
 
     const command = client.commands.get(commandName);
 
@@ -46,7 +57,9 @@ client.on("message", message => {
         console.error(error);
         message.reply('Sorry, I had trouble executing that command!');
     }
-})
+});
+
+
 
 
 
