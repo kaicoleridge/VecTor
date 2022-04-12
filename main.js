@@ -1,4 +1,4 @@
-const { Client, Intents, Collection, MessageEmbed, DiscordAPIError} = require("discord.js");
+const { Client, Intents, Collection} = require("discord.js");
 const config = require("./config.json")
 const fs = require("fs");
 
