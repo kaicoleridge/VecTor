@@ -2,8 +2,7 @@ const { Client, Intents, Collection, MessageEmbed, MessageAttachment} = require(
 const config = require("./config.json")
 const fs = require("fs");
 
-
-
+//DECLARING AND INITIALIZING INTENTS
 const client = new Client({ 
     intents: [
         Intents.FLAGS.GUILDS,
@@ -14,7 +13,6 @@ const client = new Client({
 })
 
 
-
 //FIND ALL FILES IN THE COMMANDS FOLDER 
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js'));
@@ -22,6 +20,15 @@ const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWi
 for(const file of commandFiles){
     const command = require(`./src/commands/${file}`);
     client.commands.set(command.name, command);
+}
+
+//FIND FILES IN THE TOOLS FOLDER
+client.toolCommands = new Collection();
+const toolFiles = fs.readdirSync('./src/tools').filter(file => file.endsWith('.js'));
+
+for(const file of toolFiles){
+    const tool = require(`./src/tools/${file}`);
+    client.toolCommands.set(tool.name, tool);
 }
 
 
@@ -41,20 +48,18 @@ client.on('guildMemberAdd', member => {
     .setDescription("Hello there. Thank you for joining the NUM Discord Server! Glad you're here :)")
     .addFields(
         {name: "📜 Rules", value: "Please read the rules before you start using the server! Rules can be found in the #rules channel!"},
-        {name: "\u200b", value: "\u200b", inline: false},
-        {name: "✔️ Verify", value: "In order to use the server please verify yourself by heading over to the #verify channel."},
     )
     .setColor('#4c31e8')
     .setImage('attachment://welcome.png')
     .setTimestamp()
-    .setAuthor("By NUM")
-    member.send("Welcome to the server!");
     member.send({ embeds: [welcomeEmbed], files: ['./imgs/welcome.png'] });
 });
 
-
-
-
+//AUTO ASSIGN ROLE ON JOIN
+client.on('guildMemberAdd', member => {
+    const assignRole = member.guild.roles.cache.find(role => role.name === "Member");
+    member.roles.add(assignRole);   
+});
 
 
 //checks if command exists // error checking for commands
@@ -76,9 +81,6 @@ client.on("messageCreate", message => {
         message.reply('Sorry, I had trouble executing that command!');
     }
 });
-
-
-
 
 
 // DISCORD BOT TOKEN FOR ACTIVE DISCORD CONNECTION
