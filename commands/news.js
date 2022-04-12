@@ -21,34 +21,34 @@ module.exports = {
             .setImage(response.data.articles[4].urlToImage)
             .setFooter("Powered by NewsAPI.org. Information provided by BBC News")
             .addFields(
-                  {name: "Headline", value: response.data.articles[0].title, inline: false},
+                  {name: "1️⃣ Headline", value: response.data.articles[0].title, inline: false},
                   {name: "Description", value: response.data.articles[0].description, inline: false},
-                  {name: "URL", value: response.data.articles[0].url, inline: false},
+                  {name: "🔗 URL", value: response.data.articles[0].url, inline: false},
 
                   {name: "\u200b", value: "\u200b", inline: false},
 
-                  {name: "Headline", value: response.data.articles[1].title, inline: false},
+                  {name: "2️⃣ Headline", value: response.data.articles[1].title, inline: false},
                   {name: "Description", value: response.data.articles[1].description, inline: false},
-                  {name: "URL", value: response.data.articles[1].url, inline: false},
+                  {name: "🔗 URL", value: response.data.articles[1].url, inline: false},
                   
 
                   {name: "\u200b", value: "\u200b", inline: false},
 
-                  {name: "Headline", value: response.data.articles[2].title, inline: false},
+                  {name: "3️⃣ Headline", value: response.data.articles[2].title, inline: false},
                   {name: "Description", value: response.data.articles[2].description, inline: false},
-                  {name: "URL", value: response.data.articles[2].url, inline: false},
+                  {name: "🔗 URL", value: response.data.articles[2].url, inline: false},
 
                   {name: "\u200b", value: "\u200b", inline: false},
 
-                  {name: "Headline", value: response.data.articles[3].title, inline: false},
+                  {name: "4️⃣ Headline", value: response.data.articles[3].title, inline: false},
                   {name: "Description", value: response.data.articles[3].description, inline: false},
-                  {name: "URL", value: response.data.articles[3].url, inline: false},
+                  {name: "🔗 URL", value: response.data.articles[3].url, inline: false},
 
                   {name: "\u200b", value: "\u200b", inline: false},
 
-                  {name: "Headline", value: response.data.articles[4].title, inline: false},
+                  {name: "5️⃣ Headline", value: response.data.articles[4].title, inline: false},
                   {name: "Description", value: response.data.articles[4].description, inline: false},
-                  {name: "URL", value: response.data.articles[4].url, inline: false}
+                  {name: "🔗 URL", value: response.data.articles[4].url, inline: false}
 
                   
             )
