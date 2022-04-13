@@ -15,9 +15,8 @@ module.exports = {
            {name: ">dog 🐈", value: "Get a random dog image"},
            {name: ">news 📰", value: "Get the latest news headlines from around the world"},
            {name: ">stats 📈", value: "Show Discord server stats ie. member count etc."},
-           {name: ">report 🔴 **(COMING SOON)**" ,value: "Report a user to the NUM Discord Server"},
+           {name: ">report 🔴 **(COMING SOON)**" ,value: "Report a user in the server"},
            {name: ">twitter 🐦",   value:"Keep up to date with me on twitter!"},
-           {name: ">movieShowings 🍿", value: "Get the current movie showings hosted in Bigscreen VR & the NUM Discord Server"},
            {name: "💜 MORE COMMANDS COMING SOON! 💜", value: "LOOK OUT FOR MORE UPCOMING COMMANDS!"}
            
         )
