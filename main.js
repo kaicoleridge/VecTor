@@ -1,4 +1,5 @@
-const { Client, Intents, Collection, MessageEmbed,} = require("discord.js");
+const { Client, Intents, Collection, MessageEmbed} = require("discord.js");
+const { Routes } = require('discord-api-types/v9');
 const config = require(`${process.cwd()}/config.json`)
 const fs = require("fs");
 
@@ -24,8 +25,6 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-
-
 //DECLARE PREFIX FOR BOT
 let prefix = ">";
 
@@ -41,7 +40,7 @@ client.on('guildMemberAdd', member => {
     .setTitle('👋 Welcome to the NUM Discord Server!')
     .setDescription("Hello there. Thank you for joining the NUM Discord Server! Glad you're here :)")
     .addFields(
-        {name: "📜 Rules", value: "Please read the rules before you start using the server! Rules can be found in the #rules channel!"},
+        {name: "📜 Rules", value: "Please read the rules before you start using the server! Rules can be found in the **#rules** channel!"},
     )
     .setColor('#4c31e8')
     .setImage('attachment://welcome.png')
