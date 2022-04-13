@@ -1,3 +1,24 @@
 
 ![twitter2](https://user-images.githubusercontent.com/51129378/162713328-e9606dc8-293c-4de9-8124-3c69b6717ff7.png)
-<h1 align="center"> VecTor Discord Bot</h1>
+<h1 align="center">VecTor Discord Bot</h1>
+
+## 🤖 What is VecTor?
+VecTor is a personal Discord Bot I have developed for my public Discord Server. 
+
+## ❔ What does VecTor do?
+VecTor is a multi-purpose bot with a range of commands that are suited for everyone! <br> Moderation features are avaliable for VecTor, fun commands for server members.
+<br>
+<br>
+A few commands for example:<br>
+ - `>fact` - sends a useless random fact from therandomfactapi
+-  `>news` - sends and curates the top 5 news headlines from around the world
+-  `>meme` - sends a meme 
+
+And mamy more!
+
+## ✉️ Can I Invite VecTor to my Discord Server?
+Right now this Bot is NOT avaliable for public use in other servers. I'm currently developing and testing the bot out for it to be stable enough. <br> I'm aiming to release VecTor for public release in the next upcoming weeks! Stay tuned
+
+### 🔗 Join my Discord!
+If you would like to use and get updates about VecTor join my Discord Server or  <br> if you have any questions DM me over on Discord!
+ > https://discord.gg/B6ERp7ehDD
