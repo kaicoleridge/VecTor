@@ -22,3 +22,6 @@ Right now this Bot is NOT avaliable for public use in other servers. I'm current
 ### 🔗 Join my Discord!
 If you would like to use and get updates about VecTor join my Discord Server or  <br> if you have any questions DM me over on Discord!
  > https://discord.gg/B6ERp7ehDD
+
+### 🐦 Follow VecTor on Twitter!
+You can also keep up to date with the progess of VecTor over on twitter at [@officialvector_](https://twitter.com/officialvector_)
