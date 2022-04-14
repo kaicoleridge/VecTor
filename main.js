@@ -51,8 +51,10 @@ client.on('guildMemberAdd', member => {
 //AUTO ASSIGN ROLE ON JOIN
 client.on('guildMemberAdd', member => {
     const assignRole = member.guild.roles.cache.find(role => role.name === "Member");
-    member.roles.add(assignRole);   
+    if(!assignRole) return console.log("No role found to be assigned"); else
+    member.roles.add(assignRole);   //ADD ROLE TO NEW USER
 });
+
 
 
 //checks if command exists // error checking for commands
