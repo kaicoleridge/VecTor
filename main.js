@@ -15,6 +15,7 @@ const client = new Client({
     ] 
 })
 
+const prefix = config.PREFIX;
 
 //FIND ALL FILES IN THE COMMANDS FOLDER 
 client.commands = new Collection();
@@ -25,8 +26,6 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-//DECLARE PREFIX FOR BOT
-let prefix = ">";
 
  //CHECK IF THE BOT IS ONLINE AND SETTING BOT STATUS PRESENCE
 client.once('ready', () => {
@@ -34,13 +33,17 @@ client.once('ready', () => {
     client.user.setActivity('>help', { type: "LISTENING"},)
 });
 
+
+
 //SEND PRIVATE DM TO USER ON JOIN
 client.on('guildMemberAdd', member => {
     const welcomeEmbed = new MessageEmbed()
+    .setAuthor(member.user.tag, member.user.displayAvatarURL())
     .setTitle('👋 Welcome to the NUM Discord Server!')
     .setDescription("Hello there. Thank you for joining the NUM Discord Server! Glad you're here :)")
     .addFields(
         {name: "📜 Rules", value: "Please read the rules before you start using the server! Rules can be found in the **#rules** channel!"},
+        {name: "😊 Introudce yourself", value: "Head over to the **#introduce-yourself** channel to introduce yourself and get to know the server!"},
     )
     .setColor('#4c31e8')
     .setImage('attachment://welcome.png')
@@ -54,6 +57,9 @@ client.on('guildMemberAdd', member => {
     if(!assignRole) return console.log("No role found to be assigned"); else
     member.roles.add(assignRole);   //ADD ROLE TO NEW USER
 });
+
+
+
 
 
 

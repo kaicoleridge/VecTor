@@ -12,10 +12,11 @@ module.exports = {
            {name: ">ping 🏓", value: "Test the bot's latency, to see if I'm working correcly!"},
            {name: ">invite 🔗", value: "Get the invite link to invite me to your server!"},
            {name: ">meme 🐸", value: "Get a random meme"},
+           {name: ">coin :coin:", value: "flip a coin"},
            {name: ">dog 🐈", value: "Get a random dog image"},
            {name: ">football ⚽  **(COMING SOON)**", value: "Get latest football matches scores from the Premire League"},
            {name: ">news 📰", value: "Get the latest news headlines from around the world"},
-           {name: ">stats 📈 **(COMING SOON)**", value: "Show Discord server stats ie. member count etc."},
+           {name: ">userinfo 📈 **(COMING SOON)**", value: "Get information about a server member."},
            {name: ">report 🔴 **(COMING SOON)**" ,value: "Report a user in the server"},
            {name: ">twitter 🐦",   value:"Keep up to date with me on twitter!"},
            {name: "💜 MORE COMMANDS COMING SOON! 💜", value: "LOOK OUT FOR MORE UPCOMING COMMANDS!"}
