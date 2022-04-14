@@ -9,14 +9,19 @@ module.exports = {
         .then(response => {
             const factEmbed = new MessageEmbed()
             .setTitle("DID YOU KNOW?")
-            .setDescription('**DISHED UP THIS FACT FOR YOU**' )
             .setColor('RANDOM')
             .setThumbnail('')
             factEmbed.setFooter({
                 text: "Powered by uselessfacts.jsph.pl"
             })
-            factEmbed.setDescription(response.data.text)
-            message.channel.send({embeds: [factEmbed]});
+            .addField('Fact', response.data.text)
+            message.channel.send({embeds: [factEmbed]}).then(embedMessage => {
+                embedMessage.react('👍');
+                embedMessage.react('👎');
         })
+    })
+    .catch(error => {
+        console.log(error);
+    });
     }
 }
