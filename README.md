@@ -14,7 +14,7 @@ A few commands for example:<br>
 -  `>news` - sends and curates the top 5 news headlines from around the world
 -  `>meme` - sends a meme 
 
-And mamy more!
+And many more!
 
 ## ✉️ Can I Invite VecTor to my Discord Server?
 Right now this Bot is NOT avaliable for public use in other servers. This bot has been hardcoded to work with my server only. I will be releasing it publically in the future so stay tuned.
