@@ -19,6 +19,20 @@ module.exports = {
                 );
                 message.channel.send({embeds: [purgeEmbed]});
             });
+
+           
+
+            if(args[0] > 50){
+                const purgeEmbed = new MessageEmbed()
+                .setTitle("Error")
+                .setColor('#4c31e8')
+                .setThumbnail('')
+                .addFields(
+                    {name: "Error", value: "You can only purge up to 100 messages at a time!", inline: false},
+                    {name: "Purged by", value: `${message.author.username}`, inline: false}
+                );
+                message.channel.send({embeds: [purgeEmbed]});
+            }
             
     }
 }
