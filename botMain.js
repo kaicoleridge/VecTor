@@ -1,5 +1,4 @@
 const { Client, Intents, Collection, MessageEmbed} = require("discord.js");
-const { Routes } = require('discord-api-types/v9');
 const config = require(`${process.cwd()}/config.json`)
 const fs = require("fs");
 
@@ -17,6 +16,7 @@ const client = new Client({
 
 const prefix = config.PREFIX;
 
+
 //FIND ALL FILES IN THE COMMANDS FOLDER 
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js'));
@@ -27,11 +27,14 @@ for(const file of commandFiles){
 }
 
 
+
+
  //CHECK IF THE BOT IS ONLINE AND SETTING BOT STATUS PRESENCE
-client.once('ready', () => {
+client.once('ready', () =>  {
     console.log(`💜 Vector is online and logged in as ${client.user.tag}`);
     client.user.setActivity('>help', { type: "LISTENING"},)
 });
+
 
 
 
@@ -59,6 +62,55 @@ client.on('guildMemberAdd', member => {
 });
 
 
+
+// detect if message contains discord.gg link
+client.on('message', async message => {
+    if(message.author.bot) return;
+    if(message.content.includes("discord.gg")){
+        message.delete();
+        const warnEmbed = new MessageEmbed()
+        .setTitle('⚠️ Warning!')
+        .setDescription('You have been warned for advertising other Discord Servers!')
+        .addField('Reason', 'Advertising other Discord Servers')
+        .setColor('#ff0000')
+        .setTimestamp()
+        message.author.send({embeds: [warnEmbed]});
+        message.channel.send(`${message.author} Please do not advertise other servers! You have been warned!`);
+        } 
+   // client.channels.cache.get('960689051155968070').send(`**Member Warned**: ${message.author} 
+    
+   // **REASON**: Advertising other servers in ${message.channel}`);
+    
+});
+
+// DETECT IF MESSAGE CONTAINS OFFENSIVE WORDS
+client.on('message', async message => {
+    let blacklisted = ["NIGGER", "NIGGA", "NIG", "NIGG", "FAGGOT", "CUNT"]
+    if(message.author.bot) return;
+    for(var i in blacklisted){
+        if(message.content.includes(blacklisted[i].toLowerCase())){
+            message.delete();
+
+            
+        
+        const bannedEmbed = new MessageEmbed()
+            .setTitle('⛔ Temporary Banned')
+            .setDescription('You have been temporary banned for using offensive language!')
+            .addField('📝 Reason', 'Offensive Language')
+            .addField('⌛ Ban Length', '5 Minutes')
+            .addField('👮 Moderator', 'VecTor')
+            .setColor('#ff0000')
+            .setTimestamp()
+            .setAuthor(message.author.tag, message.author.displayAvatarURL())
+            message.author.send({embeds: [bannedEmbed]});
+        }
+    }
+   
+    
+});
+
+
+
 //checks if command exists // error checking for commands
 client.on("messageCreate", message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -82,3 +134,5 @@ client.on("messageCreate", message => {
 
 // DISCORD BOT TOKEN FOR ACTIVE DISCORD CONNECTION
 client.login(config.BOT_TOKEN);
+
+
