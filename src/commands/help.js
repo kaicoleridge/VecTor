@@ -14,12 +14,11 @@ module.exports = {
            {name: ">meme 🐸", value: "Get a random meme"},
            {name: ">coin :coin:", value: "flip a coin"},
            {name: ">dog 🐈", value: "Get a random dog image"},
-           {name: ">quiz ❓ **(COMING SOON)**", value: "Start a quiz with me!"},
            {name: ">football ⚽  **(COMING SOON)**", value: "Get latest football matches scores from the Premire League"},
            {name: ">news 📰", value: "Get the latest news headlines from around the world"},
            {name: ">userinfo 📈 **(COMING SOON)**", value: "Get information about a server member."},
            {name: ">report 🔴 **(COMING SOON)**" ,value: "Report a user in the server"},
-           {name: ">twitter 🐦",   value:"Keep up to date with me on twitter!"},
+           {name: ">twitter 🐦**(COMING SOON)**", value: "Get tweets from a user"},
            {name: "💜 MORE COMMANDS COMING SOON! 💜", value: "LOOK OUT FOR MORE UPCOMING COMMANDS!"}
            
         )

@@ -29,7 +29,7 @@ for(const file of commandFiles){
 
  //CHECK IF THE BOT IS ONLINE AND SETTING BOT STATUS PRESENCE
 client.once('ready', () => {
-    console.log(`Vector is alive and logged in as ${client.user.tag}`);
+    console.log(`💜 Vector is online and logged in as ${client.user.tag}`);
     client.user.setActivity('>help', { type: "LISTENING"},)
 });
 
@@ -57,10 +57,6 @@ client.on('guildMemberAdd', member => {
     if(!assignRole) return console.log("No role found to be assigned"); else
     member.roles.add(assignRole);   //ADD ROLE TO NEW USER
 });
-
-
-
-
 
 
 //checks if command exists // error checking for commands
