@@ -9,7 +9,9 @@ module.exports = {
         .setTitle('Get help from VecTor')
         .setDescription("Here is a list of all current commands I can do! Pick a command below and see the magic I can perform! ✨")
         .addFields(
+            
            {name: ">ping 🏓", value: "Test the bot's latency, to see if I'm working correcly!"},
+           {name: ">purge 🗑️", value: "Purge a certain amount of messages"},
            {name: ">invite 🔗", value: "Get the invite link to invite me to your server!"},
            {name: ">meme 🐸", value: "Get a random meme"},
            {name: ">coin :coin:", value: "flip a coin"},

@@ -1,8 +1,8 @@
 const {MessageEmbed} = require('discord.js');
 
 module.exports = {
-    name: "football",
-    description: "Get information about football matches.",
+    name: "userinfo",
+    description: "Get information about a server member.",
     execute(message, args) {
 
         const previewEmbed = new MessageEmbed()
