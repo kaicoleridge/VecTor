@@ -24,9 +24,12 @@ module.exports = {
         })
         .addField('Messages deleted', amountToDelete + " messages")
         .addField('Purged by', message.author.tag)
+        .setFooter({
+            text: `This message will delete in 10 seconds`
+        })
         message.channel.send({embeds: [purgeEmbed]})
         .then(msg => {
-          setTimeout(() => msg.delete(), 3000)
+          setTimeout(() => msg.delete(), 10000)
         })
         .catch("Error deleting message");
     }

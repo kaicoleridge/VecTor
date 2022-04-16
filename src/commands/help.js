@@ -15,10 +15,11 @@ module.exports = {
            {name: ">invite 🔗", value: "Get the invite link to invite me to your server!"},
            {name: ">meme 🐸", value: "Get a random meme"},
            {name: ">coin :coin:", value: "flip a coin"},
+           {name: ">crypto 📈", value: "Get the current price of a crypto currency"},
            {name: ">dog 🐈", value: "Get a random dog image"},
            {name: ">football ⚽  **(COMING SOON)**", value: "Get latest football matches scores from the Premire League"},
            {name: ">news 📰", value: "Get the latest news headlines from around the world"},
-           {name: ">userinfo 📈 **(COMING SOON)**", value: "Get information about a server member."},
+           {name: ">userinfo 🧍 **(COMING SOON)**", value: "Get information about a server member."},
            {name: ">report 🔴 **(COMING SOON)**" ,value: "Report a user in the server"},
            {name: ">twitter 🐦**(COMING SOON)**", value: "Get tweets from a user"},
            {name: "💜 MORE COMMANDS COMING SOON! 💜", value: "LOOK OUT FOR MORE UPCOMING COMMANDS!"}

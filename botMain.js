@@ -38,7 +38,7 @@ client.once('ready', () =>  {
 client.on('message', message => {
     const welcomeGreetings = [
     "📢 LOUD AND CLEAR", 
-    "TESTING TESTING 123", 
+    "🎤 Testing, Testing, 123.", 
     "Ready to serve!", 
     "What can I do for you? Start with``>help``"];
     "I'm here to help you! Type ``>help`` to see all my commands!"
