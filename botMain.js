@@ -16,7 +16,6 @@ const client = new Client({
 
 const prefix = config.PREFIX;
 
-
 //FIND ALL FILES IN THE COMMANDS FOLDER 
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js'));
