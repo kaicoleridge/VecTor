@@ -54,27 +54,42 @@ client.on('message', message => {
 
 //SEND PRIVATE DM TO USER ON JOIN
 client.on('guildMemberAdd', member => {
-    const welcomeEmbed = new MessageEmbed()
-    .setAuthor(member.user.tag, member.user.displayAvatarURL())
-    .setTitle('👋 Welcome to the NUM Discord Server!')
-    .setDescription("Hello there. Thank you for joining the NUM Discord Server! Glad you're here :)")
-    .addFields(
-        {name: "📜 Rules", value: "Please read the rules before you start using the server! Rules can be found in the **#rules** channel!"},
-        {name: "😊 Introudce yourself", value: "Head over to the **#introduce-yourself** channel to introduce yourself and get to know the server!"},
-    )
-    .setColor('#4c31e8')
-    .setImage('attachment://welcome.png')
-    .setTimestamp()
-    member.send({ embeds: [welcomeEmbed], files: ['./imgs/welcome.png'] });
+    if(!member.user.bot){
+        const welcomeEmbed = new MessageEmbed()
+        .setAuthor(member.user.tag, member.user.displayAvatarURL())
+        .setTitle('👋 Welcome to the NUM Discord Server!')
+        .setDescription("Hello there. Thank you for joining the NUM Discord Server! Glad you're here :)")
+        .addFields(
+            {name: "📜 Rules", value: "Please read the rules before you start using the server! Rules can be found in the **#rules** channel!"},
+            {name: "😊 Introudce yourself", value: "Head over to the **#introduce-yourself** channel to introduce yourself and get to know the server!"},
+        )
+        .setColor('#4c31e8')
+        .setImage('attachment://welcome.png')
+        .setTimestamp()
+        member.send({ embeds: [welcomeEmbed], files: ['./imgs/welcome.png'] });
+
+    }
+   
 });
 
 //AUTO ASSIGN ROLE ON JOIN
 client.on('guildMemberAdd', member => {
+    const bot = member.user.bot;
+    const botRole = member.guild.roles.cache.find(role => role.name === "Bots");
+
+    if(!bot){
     const assignRole = member.guild.roles.cache.find(role => role.name === "Member");
     if(!assignRole) return console.log("No role found to be assigned"); else
     member.roles.add(assignRole);   //ADD ROLE TO NEW USER
-});
+    }
 
+    if(bot){
+        member.roles.add(botRole);
+    }
+
+   
+});
+    
 
 
 // detect if message contains discord.gg link
