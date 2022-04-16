@@ -35,7 +35,22 @@ client.once('ready', () =>  {
 });
 
 
+client.on('message', message => {
+    const welcomeGreetings = [
+    "📢 LOUD AND CLEAR", 
+    "TESTING TESTING 123", 
+    "Ready to serve!", 
+    "What can I do for you? Start with``>help``"];
+    "I'm here to help you! Type ``>help`` to see all my commands!"
+    "I can do most things get started with ``>help``"
+    const randomGreeting = welcomeGreetings[Math.floor(Math.random() * welcomeGreetings.length)];
+    if(message.author.bot) return;
+    if(message.mentions.users.has(client.user.id)){
+        message.reply(`${randomGreeting}` + ` ${message.author}`);
+    }
 
+});
+    
 
 //SEND PRIVATE DM TO USER ON JOIN
 client.on('guildMemberAdd', member => {
@@ -65,7 +80,7 @@ client.on('guildMemberAdd', member => {
 // detect if message contains discord.gg link
 client.on('message', async message => {
     if(message.author.bot) return;
-    if(message.content.includes("discord.gg")){
+    if(message.content.includes("discord.gg", "discordapp.com/invite", "discord.me", "discord.io", "discord.com/invite")){
         message.delete();
         const warnEmbed = new MessageEmbed()
         .setTitle('⚠️ Warning!')
@@ -73,6 +88,7 @@ client.on('message', async message => {
         .addField('Reason', 'Advertising other Discord Servers')
         .setColor('#ff0000')
         .setTimestamp()
+        
         message.author.send({embeds: [warnEmbed]});
         message.channel.send(`${message.author} Please do not advertise other servers! You have been warned!`);
         } 
@@ -83,18 +99,36 @@ client.on('message', async message => {
 });
 
 // DETECT IF MESSAGE CONTAINS OFFENSIVE WORDS
-client.on('message', async message => {
+/**client.on('message', async message => {
     let blacklisted = ["NIGGER", "NIGGA", "NIG", "NIGG", "FAGGOT", "CUNT"]
+    let count = 0;
     if(message.author.bot) return;
     for(var i in blacklisted){
         if(message.content.includes(blacklisted[i].toLowerCase())){
             message.delete();
+            count++;
 
-            
+           message.channel.send(`${message.author} Please do not use offensive words! Check your DM!`);
+           console.log(count);
         
+           break;
+        }
+            
+           if(count === 2){
+            count++;
+               message.channel.send("⚠️ Warning! You have been warned for using offensive words! This is your last warning!");
+           }
+
+           if(count === 3){
+            message.channel.send("NOOOOOOO");
+        }
+
+           
+        
+         
         const bannedEmbed = new MessageEmbed()
-            .setTitle('⛔ Temporary Banned')
-            .setDescription('You have been temporary banned for using offensive language!')
+            .setTitle('⛔ WARNING!')
+            .setDescription('You have been warned for using offensive language! This ')
             .addField('📝 Reason', 'Offensive Language')
             .addField('⌛ Ban Length', '5 Minutes')
             .addField('👮 Moderator', 'VecTor')
@@ -104,10 +138,12 @@ client.on('message', async message => {
             message.author.send({embeds: [bannedEmbed]});
         }
     }
+
    
     
 });
 
+/** */
 
 
 //checks if command exists // error checking for commands
