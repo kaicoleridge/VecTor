@@ -118,7 +118,12 @@ client.on("messageCreate", message => {
     const commandName = args.shift().toLowerCase();
 
     if(!client.commands.has(commandName)) 
-    return message.reply(`${message.member.user.tag} 🤦 DOH! That command doesn't exist! https://i.gifer.com/9nCX.gif`);
+    return message.reply(`${message.member.user.tag} 🤦 DOH! That command doesn't exist! https://i.gifer.com/9nCX.gif`)
+    .then(msg => {
+        setTimeout(() => msg.delete(), 3000)
+      })
+      .catch("Error deleting message");
+  
 
     const command = client.commands.get(commandName);
 
