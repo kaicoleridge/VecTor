@@ -10,7 +10,8 @@ module.exports = {
         .setTitle('Flipping a coin...')
         .setColor('YELLOW')
         .setDescription(`Coin landed on ${randomCoin}!`)
-        .setFooter('Powered by VecTor')
+        coin.setFooter({
+            text: 'Powered by VecTor'})
         message.channel.send({embeds: [coinEmbed]});
     }
 }

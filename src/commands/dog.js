@@ -13,7 +13,9 @@ module.exports = {
             .setDescription('How much is that doggy in the window? 🐕 = 🪟' )
             .setImage(response.data.message)
             .setColor('#4c31e8')
-            .setFooter('Powered by dog.ceo')
+            dogEmbed.setFooter({
+                text: 'Powered by dog.ceo'
+            })
             .setThumbnail('http://assets.stickpng.com/images/5845e673fb0b0755fa99d7ed.png')
           
             message.channel.send({embeds: [dogEmbed]}).then(embedMessage => {

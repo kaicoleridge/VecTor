@@ -24,7 +24,7 @@ module.exports = {
         })
         .addField('Messages deleted', amountToDelete + " messages")
         .addField('Purged by', message.author.tag)
-        .setFooter({
+        purgeEmbed.setFooter({
             text: `This message will delete in 10 seconds`
         })
         message.channel.send({embeds: [purgeEmbed]})

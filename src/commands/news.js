@@ -15,7 +15,6 @@ module.exports = {
             .setTitle('Top World News Headlines 📰')
             .setDescription('Here are the latest news headlines from around the World')
             .setColor('RED')
-            .setFooter('Powered by NewsAPI.org')
             .setThumbnail('attachment://news.png')
             .setImage(response.data.articles[4].urlToImage)
             newsEmbed.setFooter({

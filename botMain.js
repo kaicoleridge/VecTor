@@ -35,7 +35,7 @@ client.once('ready', () =>  {
 });
 
 
-client.on('message', message => {
+client.on('messageCreate', message => {
     const welcomeGreetings = [
     "📢 LOUD AND CLEAR", 
     "🎤 Testing, Testing, 123.", 
@@ -96,7 +96,7 @@ client.on('guildMemberAdd', member => {
 
 
 // detect if message contains discord.gg link
-client.on('message', async message => {
+client.on('messageCreate', async message => {
     if(message.author.bot) return;
     if(message.content.includes("discord.gg", "discordapp.com/invite", "discord.me", "discord.io", "discord.com/invite")){
         message.delete();
