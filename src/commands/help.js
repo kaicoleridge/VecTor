@@ -22,7 +22,7 @@ module.exports = {
            {name: ">userinfo 🧍 **(COMING SOON)**", value: "Get information about a server member."},
            {name: ">report 🔴 **(COMING SOON)**" ,value: "Report a user in the server"},
            {name: ">twitter 🐦**(COMING SOON)**", value: "Get tweets from a user"},
-           {name: "💜 MORE COMMANDS COMING SOON! 💜", value: "LOOK OUT FOR MORE UPCOMING COMMANDS!"}
+           {name: "💜 MORE COMMANDS COMING SOON! 💜", value: "More commands are being added to the bot, stay tuned!"}
            
         )
         message.channel.send({ embeds: [helpEmbed], files: ['./imgs/help.png'] });

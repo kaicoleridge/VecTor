@@ -56,6 +56,10 @@ module.exports = {
             )
             message.channel.send({embeds: [newsEmbed], files: ['./imgs/news.png']});
         })
+        .catch(error => {
+            console.log(error);
+            message.channel.send("🤦 Something went wrong! Please try again later!");
+        })
 
         
 

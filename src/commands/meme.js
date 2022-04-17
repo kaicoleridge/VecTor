@@ -22,7 +22,11 @@ module.exports = {
                 embedMessage.react('👎');
             });
             
-            
+        })
+
+        .catch(error => {
+            console.log(error);
+            message.channel.send("🤦 Something went wrong! Please try again later!");
         })
     }
 }
