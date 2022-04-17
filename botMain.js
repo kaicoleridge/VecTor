@@ -67,6 +67,7 @@ client.on('guildMemberAdd', member => {
         .setImage('attachment://welcome.png')
         .setTimestamp()
         member.send({ embeds: [welcomeEmbed], files: ['./imgs/welcome.png'] });
+        console.log(`${member.user.tag} has joined the server!`);
 
     }
    
@@ -86,6 +87,8 @@ client.on('guildMemberAdd', member => {
     if(bot){
         member.roles.add(botRole);
     }
+
+    console.log(`${member.user.tag} assigned role successfully!`);
 
    
 });
