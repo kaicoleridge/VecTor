@@ -15,7 +15,7 @@ module.exports = {
             .setTitle('Top World News Headlines 📰')
             .setDescription('Here are the latest news headlines from around the World')
             .setColor('RED')
-            .setThumbnail('attachment://news.png')
+            .setThumbnail('https://s3-eu-west-1.amazonaws.com/static.media.info/l/o/1/1043.1636928324.png')
             .setImage(response.data.articles[4].urlToImage)
             .setFooter({
                 text: "Powered by NewsAPI.org. Source BBC News"
@@ -53,7 +53,7 @@ module.exports = {
 
                   
             )
-            message.channel.send({embeds: [newsEmbed], files: ['./imgs/news.png']});
+            message.channel.send({embeds: [newsEmbed]});
         })
         .catch(error => {
             console.log(error);
