@@ -11,7 +11,7 @@ module.exports = {
             .setTitle("DID YOU KNOW?")
             .setColor('RANDOM')
             .setThumbnail('')
-            factEmbed.setFooter({
+            .setFooter({
                 text: "Powered by uselessfacts.jsph.pl"
             })
             .addField('Fact', response.data.text)

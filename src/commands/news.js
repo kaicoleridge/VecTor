@@ -17,7 +17,7 @@ module.exports = {
             .setColor('RED')
             .setThumbnail('attachment://news.png')
             .setImage(response.data.articles[4].urlToImage)
-            newsEmbed.setFooter({
+            .setFooter({
                 text: "Powered by NewsAPI.org. Source BBC News"
             })
             .setTimestamp()

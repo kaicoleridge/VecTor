@@ -13,7 +13,7 @@ module.exports = {
             .setDescription('**DISHED UP THIS MEME FOR YOU**' )
             .setImage(response.data.url)
             .setColor('#4c31e8')
-            memeEmbed.setFooter({
+            .setFooter({
                 text: "Powered by meme-api.herokuapp.com"
             })
           

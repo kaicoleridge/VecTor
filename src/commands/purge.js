@@ -19,7 +19,7 @@ module.exports = {
         .setColor('#4c31e8')
         .setTimestamp()
         .setThumbnail(message.member.user.avatarURL({dynamic: true}))
-        purgeEmbed.setFooter({
+        .setFooter({
             text: "Powered by VecTor"
         })
         .addField('Messages deleted', amountToDelete + " messages")

@@ -14,7 +14,7 @@ module.exports = {
               {name: "Invite link to the server!", value: "Use this link which will redirect you to invite VecTor to your chosen server. https://discord.gg/B6ERp7ehDD ", inline: false},
         )
         .setThumbnail('')
-        inviteEmbed.setFooter({
+        .setFooter({
             text: 'Powered by VecTor'
         })
         message.channel.send({embeds: [inviteEmbed], files: ['./imgs/invite.png']});
