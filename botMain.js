@@ -10,7 +10,6 @@ const client = new Client({
         Intents.FLAGS.GUILDS,
         Intents.FLAGS.GUILD_MESSAGES,
         Intents.FLAGS.GUILD_MEMBERS,
-       
     ] 
 })
 
@@ -81,16 +80,17 @@ client.on('guildMemberAdd', member => {
     if(!bot){
     const assignRole = member.guild.roles.cache.find(role => role.name === "Member");
     if(!assignRole) return console.log("No role found to be assigned"); else
-    member.roles.add(assignRole);   //ADD ROLE TO NEW USER
+    member.roles.add(assignRole); //ADD ROLE TO NEW USER
+    console.log(`${member.user.tag} assigned the member role successfully!`);  
     }
 
     if(bot){
         member.roles.add(botRole);
+        console.log(`${bot} has succesfully been added to the Bots role`);
+    } else {
+        console.log(`An error occured while trying to add ${bot} to the Bots role`);
     }
 
-    console.log(`${member.user.tag} assigned role successfully!`);
-
-   
 });
     
 
