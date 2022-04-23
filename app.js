@@ -112,51 +112,32 @@ client.on('messageCreate', async message => {
 });
 
 // DETECT IF MESSAGE CONTAINS OFFENSIVE WORDS
-/**client.on('message', async message => {
-    let blacklisted = ["NIGGER", "NIGGA", "NIG", "NIGG", "FAGGOT", "CUNT"]
-    let count = 0;
+client.on('messageCreate', async message => {
+    let blacklisted = ["NIGGER", "NIGGA", "NIG", "NIGG", "FAGGOT", "CUNT", "GAY"]
     if(message.author.bot) return;
     for(var i in blacklisted){
         if(message.content.includes(blacklisted[i].toLowerCase())){
             message.delete();
-            count++;
-
-           message.channel.send(`${message.author} Please do not use offensive words! Check your DM!`);
-           console.log(count);
-        
-           break;
+            message.channel.send(`${message.author} Please do not use offensive words! Check your DM!`);
         }
+
+       
             
-           if(count === 2){
-            count++;
-               message.channel.send("⚠️ Warning! You have been warned for using offensive words! This is your last warning!");
-           }
-
-           if(count === 3){
-            message.channel.send("NOOOOOOO");
         }
-
-           
-        
-         
         const bannedEmbed = new MessageEmbed()
-            .setTitle('⛔ WARNING!')
-            .setDescription('You have been warned for using offensive language! This ')
-            .addField('📝 Reason', 'Offensive Language')
-            .addField('⌛ Ban Length', '5 Minutes')
-            .addField('👮 Moderator', 'VecTor')
-            .setColor('#ff0000')
-            .setTimestamp()
-            .setAuthor(message.author.tag, message.author.displayAvatarURL())
-            message.author.send({embeds: [bannedEmbed]});
-        }
+        .setTitle('⛔ WARNING!')
+        .setDescription('You have been warned for using offensive language! Please do not use offensive language!')
+        .addField('📝 Reason', 'Offensive Language')
+        .addField('👮 Moderator', 'VecTor')
+        .setColor('#ff0000')
+        .setTimestamp()
+        .setAuthor(message.author.tag, message.author.displayAvatarURL())
+        message.author.send({embeds: [bannedEmbed]});
+        client.channels.cache.get("960689051155968070").send(`${message.author} has been warned for using offensive language!`);
     }
-
-   
     
-});
+);
 
-/** */
 
 
 //checks if command exists // error checking for commands
