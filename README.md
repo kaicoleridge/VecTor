@@ -26,7 +26,7 @@ If you would like to use and get updates about VecTor join my Discord Server or 
 ### 🐦 Follow VecTor on Twitter!
 You can also keep up to date with the progess of VecTor over on twitter at [@officialvector_](https://twitter.com/officialvector_)
 
-### Tech Stack VecTor used
-- AWS - Hosted on EC2 Instance. Ubuntu Server
+### 👨‍💻 Tech Stack VecTor used
+- AWS - Hosted on EC2 Instance. 
 - Discord.JS API
 - Node.JS
