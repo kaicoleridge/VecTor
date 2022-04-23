@@ -3,10 +3,12 @@
 <h1 align="center">VecTor Discord Bot</h1>
 
 ## 🤖 What is VecTor?
-VecTor is a personal Discord Bot I have developed for my public Discord Server. 
+VecTor is a personal Discord Bot I have developed for my public Discord Server. I started this project as I wanted more customizability of my Discord Server such as personal moderation for my server needs, and fun commands which I find useful for myself and for my server members. 
+<br>
+<br> I find if I want to have certain commands I had to invite many different bots in my server, whereas I can code them myself into one bot with Vector!
 
 ## ❔ What does VecTor do?
-VecTor is a multi-purpose bot with a range of commands that are suited for everyone! <br> Moderation features are avaliable for VecTor, fun commands for server members.
+VecTor is a multi-purpose bot with a range of commands that are suited for everyone! Moderation features are avaliable for VecTor, fun commands for server members.
 <br>
 <br>
 A few commands for example:<br>
