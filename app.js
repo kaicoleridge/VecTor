@@ -24,9 +24,6 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-
-
-
  //CHECK IF THE BOT IS ONLINE AND SETTING BOT STATUS PRESENCE
 client.once('ready', () =>  {
     console.log(`💜 Vector is online and logged in as ${client.user.tag}`);
@@ -95,7 +92,7 @@ client.on('guildMemberAdd', member => {
     
 
 
-// detect if message contains discord.gg link
+// DETECT IF SERVER MEMBER IS ADVERTISING OTHER DISCORD SERVERS
 client.on('messageCreate', async message => {
     if(message.author.bot) return;
     if(message.content.includes("discord.gg", "discordapp.com/invite", "discord.me", "discord.io", "discord.com/invite")){
@@ -112,10 +109,6 @@ client.on('messageCreate', async message => {
         client.channels.cache.get("960689051155968070").send(`${message.author} has been warned for advertising other Discord Servers!`);
         message.channel.send(`${message.author} 👮 Please DO NOT advertise other servers! You have been warned!`);
         } 
-   // client.channels.cache.get('960689051155968070').send(`**Member Warned**: ${message.author} 
-    
-   // **REASON**: Advertising other servers in ${message.channel}`);
-    
 });
 
 // DETECT IF MESSAGE CONTAINS OFFENSIVE WORDS
