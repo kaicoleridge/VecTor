@@ -95,11 +95,11 @@ client.on('guildMemberAdd', member => {
 // DETECT IF SERVER MEMBER IS ADVERTISING OTHER DISCORD SERVERS
 client.on('messageCreate', async message => {
     if(message.author.bot) return;
-    if(message.content.includes("discord.gg", "discordapp.com/invite", "discord.me", "discord.io", "discord.com/invite")){
+    if(message.content.includes("discord.gg")){
         message.delete();
         const warnEmbed = new MessageEmbed()
         .setTitle('⚠️ Warning!')
-        .setDescription('Please DO NOT send other Discord Invites! This will result in a ban!'
+        .setDescription('Please DO NOT send other Discord Server Invites! This will result in a ban!'
         + '\n' + '**NOTE**: If you violate any rules in this server three times, you will be banned!')
         .addField('Reason', 'Advertising other Discord Servers')
         .setColor('#ff0000')
@@ -110,34 +110,6 @@ client.on('messageCreate', async message => {
         message.channel.send(`${message.author} 👮 Please DO NOT advertise other servers! You have been warned!`);
         } 
 });
-
-// DETECT IF MESSAGE CONTAINS OFFENSIVE WORDS
-client.on('messageCreate', async message => {
-    let blacklisted = ["NIGGER", "NIGGA", "NIG", "NIGG", "FAGGOT", "CUNT", "GAY"]
-    if(message.author.bot) return;
-    for(var i in blacklisted){
-        if(message.content.includes(blacklisted[i].toLowerCase())){
-            message.delete();
-            message.channel.send(`${message.author} Please do not use offensive words! Check your DM!`);
-        }
-
-       
-            
-        }
-        const bannedEmbed = new MessageEmbed()
-        .setTitle('⛔ WARNING!')
-        .setDescription('You have been warned for using offensive language! Please do not use offensive language!')
-        .addField('📝 Reason', 'Offensive Language')
-        .addField('👮 Moderator', 'VecTor')
-        .setColor('#ff0000')
-        .setTimestamp()
-        .setAuthor(message.author.tag, message.author.displayAvatarURL())
-        message.author.send({embeds: [bannedEmbed]});
-        client.channels.cache.get("960689051155968070").send(`${message.author} has been warned for using offensive language!`);
-    }
-    
-);
-
 
 
 //checks if command exists // error checking for commands
