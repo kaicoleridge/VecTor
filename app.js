@@ -102,13 +102,15 @@ client.on('messageCreate', async message => {
         message.delete();
         const warnEmbed = new MessageEmbed()
         .setTitle('⚠️ Warning!')
-        .setDescription('You have been warned for advertising other Discord Servers!')
+        .setDescription('Please DO NOT send other Discord Invites! This will result in a ban!'
+        + '\n' + '**NOTE**: If you violate any rules in this server three times, you will be banned!')
         .addField('Reason', 'Advertising other Discord Servers')
         .setColor('#ff0000')
         .setTimestamp()
         
         message.author.send({embeds: [warnEmbed]});
-        message.channel.send(`${message.author} Please do not advertise other servers! You have been warned!`);
+        client.channels.cache.get("960689051155968070").send(`${message.author} has been warned for advertising other Discord Servers!`);
+        message.channel.send(`${message.author} 👮 Please DO NOT advertise other servers! You have been warned!`);
         } 
    // client.channels.cache.get('960689051155968070').send(`**Member Warned**: ${message.author} 
     

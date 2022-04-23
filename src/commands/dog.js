@@ -9,15 +9,13 @@ module.exports = {
         axios.get('https://dog.ceo/api/breeds/image/random')
         .then(response => {
             const dogEmbed = new MessageEmbed()
-            .setTitle('Random Dog Picture 🦴')
+            .setTitle('Doggo 🦴')
             .setDescription('How much is that doggy in the window? 🐕 = 🪟' )
             .setImage(response.data.message)
             .setColor('#4c31e8')
             .setFooter({
                 text: 'Powered by dog.ceo'
             })
-            .setThumbnail('http://assets.stickpng.com/images/5845e673fb0b0755fa99d7ed.png')
-          
             message.channel.send({embeds: [dogEmbed]}).then(embedMessage => {
                 embedMessage.react('👍');
                 embedMessage.react('👎');
