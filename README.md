@@ -17,7 +17,7 @@ A few commands for example:<br>
 And many more!
 
 ## ✉️ Can I Invite VecTor to my Discord Server?
-Right now this Bot is NOT avaliable for public use in other servers. This bot has been hardcoded to work with my server only. I will be releasing it publically in the future so stay tuned.
+Right now this Bot is NOT avaliable for public use in other servers. This bot has been hardcoded to work with my server only. I have no plans to make it a public use bot just yet. 
 
 ### 🔗 Join my Discord!
 If you would like to use and get updates about VecTor join my Discord Server or  <br> if you have any questions DM me over on Discord!
