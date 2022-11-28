@@ -80,6 +80,7 @@ client.on('messageCreate', message => {
 
 	
 	
+	
 	if (detected) {
 		if(userMap.has(user.id)) {
 			userMap.set(user.id, userMap.get(user.id) + 1);
