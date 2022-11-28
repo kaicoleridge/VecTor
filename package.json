@@ -1,0 +1,26 @@
+{
+  "name": "vector-2.0",
+  "version": "2.0.0",
+  "description": "Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaicoleridge/VecTor.git"
+  },
+  "author": "Kai Coleridge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaicoleridge/VecTor/issues"
+  },
+  "homepage": "https://github.com/kaicoleridge/VecTor#readme",
+  "dependencies": {
+    "axios": "^1.2.0",
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3",
+    "node-fetch": "^2.6.1",
+    "typescript": "^4.9.3"
+  }
+}
