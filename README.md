@@ -20,7 +20,7 @@ And many more!
 
 ### 🔗 Join my Discord!
 If you would like to use and get updates about VecTor join my Discord Server or <br> if you have any questions DM me over on Discord!
- > Link to server > https://discord.gg/B6ERp7ehDD
+ > Link to server > [NUM Discord Server](https://discord.gg/gFY6uHQPNB)
 
 ### 👨‍💻 Tech Stack VecTor uses
 - AWS EC2 Instance
