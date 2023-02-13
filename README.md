@@ -1,6 +1,6 @@
 
 ![twitter2](https://user-images.githubusercontent.com/51129378/162713328-e9606dc8-293c-4de9-8124-3c69b6717ff7.png)
-<h1 align="center">VecTor Discord Bot</h1>
+<h1>VecTor Discord Bot</h1>
 
 ## 🤖 What is VecTor?
 VecTor is a multi-purpose Discord Bot for my personal server. I built VecTor as a tool for learning bot development and having more control on what functionality 
