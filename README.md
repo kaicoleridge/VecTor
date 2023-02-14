@@ -21,6 +21,6 @@ If you would like to use and get updates about VecTor join my Discord Server or 
  > Link to server > [NUM Discord Server](https://discord.gg/gFY6uHQPNB)
 
 ### 👨‍💻 Tech Stack VecTor uses
-- AWS EC2 Instance
+- AWS EC2 Container
 - Discord.JS 
 - Node.JS
