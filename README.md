@@ -10,7 +10,7 @@ Automated moderation tools are built-in the bot to detect spam and unwanted mess
 
 `/meme - sends a meme via /r/memes from reddit`
 
-`/kanye - sends a random Kanye West quote from kayne.rest`
+`/kanye - sends a random Kanye West quote from kanye.rest
 
 `/weather - provides weather stats via OpenWeather`
 
