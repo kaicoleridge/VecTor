@@ -8,9 +8,9 @@ a bot can bring to my server.
 
 Automated moderation tools are built-in the bot to detect spam and unwanted messages from server members who abuse rules, members have 3 warnings resulting an automated ban from the server. The bot has additonal miscellaneous range of features to try out here are a few. 
 
-`/meme - sends a meme via /r/memes from reddit`
+`/meme - sends a meme via /r/memes from reddit` (no longer working due to API discontinued)
 
-`/kanye - sends a random Kanye West quote from kanye.rest
+`/kanye - sends a random Kanye West quote from kanye.rest`
 
 `/weather - provides weather stats via OpenWeather`
 
